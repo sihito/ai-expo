@@ -30,7 +30,7 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true
 });
 
-export async function generateReport(companyData: CompanyData): Promise<string> {
+export async function generateReport(companyData: CompanyData[]): Promise<string> {
   try {
     const response: ChatCompletionResponse = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",

@@ -47,7 +47,7 @@ export async function generateReport(companyData: CompanyData[]): Promise<string
       max_tokens: 500,
     });
 
-    return response.choices[0].message.content;
+    return response.choices[0].message.content ? response.choices[0].message.content : '';
   } catch (error) {
     console.error('Error calling OpenAI API:', error);
     throw new Error('Failed to generate report');
